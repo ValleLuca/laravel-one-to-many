@@ -3,7 +3,7 @@
 @section('addpost')
     <h1 class="text-center">Crea post</h1>  
 
-    <form action="{{route("admin.post.update")}}" method="POST">
+    <form action="{{route("admin.post.update", $post->id)}}" method="POST">
         
         @csrf
 
