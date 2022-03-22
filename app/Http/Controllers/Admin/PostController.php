@@ -27,7 +27,8 @@ class PostController extends Controller
      */
     public function create(Post $post)
     {
-        return view('admin.posts.create');
+        $datipost = Post::all();
+        return view('admin.posts.create', compact('datipost'));
     }
 
     /**

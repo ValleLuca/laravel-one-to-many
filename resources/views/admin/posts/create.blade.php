@@ -3,7 +3,7 @@
 @section('addpost')
     <h1 class="text-center">Crea post</h1>  
 
-    <form action="{{route("admin.post.store")}}" method="POST">
+    <form action="{{route("admin.post.store")}}" method="POST" enctype="multipart/form-data">
         
         @csrf
 
@@ -22,6 +22,15 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
+
+        <select name="category_id" id="">
+
+            <option value="">----</option>
+                @foreach ($datipost as $element)
+                @dump($element)
+                    <option value="{{$element->id}}">{{$element->type}}</option>
+                @endforeach
+        </select>
 
         <div class="text-center">
             <span><a href="{{route("admin.post.index")}}"><button type="button" class="btn btn-primary">Indietro</button></a></span>

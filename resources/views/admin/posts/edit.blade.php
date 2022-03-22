@@ -24,6 +24,15 @@
             @enderror
         </div>
 
+        <div class="form-group">
+            <select name="category_id" id="">
+                <option value="">----</option>
+                @foreach ($post as $element)
+                <option value="{{$element->id}}">{{$element->type}}</option>
+                @endforeach
+            </select>
+        </div> 
+
         <div class="text-center">
             <span><a href="{{route("admin.post.index")}}"><button type="button" class="btn btn-primary">Indietro</button></a></span>
             <span><button type="submit" class="btn btn-primary">Salva modifiche</button></span>
