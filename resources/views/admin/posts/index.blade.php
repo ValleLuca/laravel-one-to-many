@@ -15,6 +15,8 @@
                     <th scope="row">{{$post->id}}</th>
                     <td class="align-middle">{{$post->title}}</td>
                     <td class="align-middle">{{$post->content}}</td>
+                    <td class="align-middle">{{$post->slug}}</td>
+
                 
                     <td class="align-middle">
                         <a href="{{route("admin.post.show", $post->id)}}"><button type="button" class="btn btn-primary mt-1">Vedi</button></a>

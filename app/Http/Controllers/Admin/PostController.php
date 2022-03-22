@@ -94,8 +94,8 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $request->validate([
-            "title"=> "required|string|max:80|unique:posts",
-            "content"=> "required|string|max:80|unique:posts",
+            "title"=> "required|string|max:100|unique:posts",
+            "content"=> "required|string|max:200|unique:posts",
         ]);
         
         $addpost = $request->all();
@@ -111,7 +111,7 @@ class PostController extends Controller
             }
         }
 
-        $data['slug'] = $tempSlug;
+        $addpost['slug'] = $tempSlug;
 
         $newPosts = new Post();
         $newPosts->fill($addpost);

@@ -8,6 +8,7 @@
         <p>{{$post->slug}}</p>
 
 
+
         <form action="{{route("admin.post.destroy", $post->id)}}" method="POST">
             @csrf
             @method("DELETE")

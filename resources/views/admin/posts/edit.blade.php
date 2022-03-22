@@ -6,6 +6,7 @@
     <form action="{{route("admin.post.update", $post->id)}}" method="POST">
         
         @csrf
+        @method('PUT')
 
         <div class="form-group text-center">
             <label for="title">Titolo</label>
