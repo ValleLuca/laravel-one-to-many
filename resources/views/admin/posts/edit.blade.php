@@ -27,7 +27,7 @@
         <div class="form-group">
             <select name="category_id" id="">
                 <option value="">----</option>
-                @foreach ($post as $element)
+                @foreach ($category as $element)
                 <option value="{{$element->id}}">{{$element->type}}</option>
                 @endforeach
             </select>

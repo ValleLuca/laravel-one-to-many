@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Support\Str;
@@ -17,7 +18,8 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('admin.posts.index', compact('posts'));
+        $category = Category::all();
+        return view('admin.posts.index', compact('posts', 'category'));
     }
 
     /**
@@ -27,7 +29,7 @@ class PostController extends Controller
      */
     public function create(Post $post)
     {
-        $datipost = Post::all();
+        $datipost = Category::all();
         return view('admin.posts.create', compact('datipost'));
     }
 
@@ -82,7 +84,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact('post'));
+        $category = Category::all();
+        return view('admin.posts.edit', compact('post','category'));
     }
 
     /**

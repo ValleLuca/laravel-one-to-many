@@ -9,8 +9,6 @@
         <p>{{$post->category_id}}</p>
 
 
-
-
         <form action="{{route("admin.post.destroy", $post->id)}}" method="POST">
             @csrf
             @method("DELETE")

@@ -27,7 +27,7 @@
 
             <option value="">----</option>
                 @foreach ($datipost as $element)
-                @dump($element)
+                @dump($datipost)
                     <option value="{{$element->id}}">{{$element->type}}</option>
                 @endforeach
         </select>
